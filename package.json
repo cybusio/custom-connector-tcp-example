@@ -1,0 +1,29 @@
+{
+  "name": "custom-connector-tcp-example",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get your application up and running.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha test/**/*.js --recursive --timeout 30000 --colors --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/cybusio/custom-connector-tcp-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/cybusio/custom-connector-tcp-example/issues"
+  },
+  "homepage": "https://bitbucket.org/cybusio/custom-connector-tcp-example#readme",
+  "dependencies": {
+    "node-cron": "^3.0.2",
+    "promise-store-js": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^10.1.0"
+  }
+}

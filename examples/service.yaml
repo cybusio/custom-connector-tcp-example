@@ -1,0 +1,30 @@
+description: myCustomProtocolService
+
+metadata:
+  name: myCustomProtocolService
+
+resources:
+  myConnection:
+    type: Cybus::Connection
+    properties:
+      protocol: Custom
+      agentName: CustomConnectorAgent
+      connection:
+        host: localhost
+        port: 9000
+
+  mySubscribeEndpoint:
+    type: Cybus::Endpoint
+    properties:
+      protocol: Custom
+      connection: !ref myConnection 
+      subscribe:
+        address: 'foo'
+
+  myWriteEndpoint:
+    type: Cybus::Endpoint
+    properties:
+      protocol: Custom
+      connection: !ref myConnection 
+      write:
+        address: 'foo'

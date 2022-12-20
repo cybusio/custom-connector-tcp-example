@@ -1,0 +1,12 @@
+version: "2.4"
+services:
+
+  test-node:
+    image: node:16.15.0-buster-slim@sha256:9ad2f889d4a15ef94e40ac75e95c28daa34073dbc25d7b1e619caacc6b83623c
+    volumes:
+      - ../:/app
+    command: |
+      sh -c '
+        cd /app &&
+        npm install && 
+        /app/node_modules/.bin/mocha /app/test/**/*.js --timeout 3000 --colors --exit'

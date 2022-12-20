@@ -1,0 +1,36 @@
+{
+    "$id": "CustomConnection",
+    "definitions": {
+        "connection": {
+            "type": "object",
+            "required": [
+                "host",
+                "port"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "host": {
+                    "$id": "/properties/host",
+                    "type": "string",
+                    "title": "Host",
+                    "description": "IP address or hostname of the server to connect to",
+                    "minLength": 1,
+                    "examples": [
+                        "192.168.2.60",
+                        "server01"
+                    ]
+                },
+                "port": {
+                    "$id": "/properties/port",
+                    "type": "integer",
+                    "title": "Port",
+                    "description": "Port number of the server",
+                    "minimum": 0,
+                    "examples": [
+                        9000
+                    ]
+                }
+            }
+        }
+    }
+}

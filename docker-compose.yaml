@@ -1,0 +1,23 @@
+version: "2.4"
+services:
+
+  # Run the example server
+  server:
+    build: .
+    network_mode: host # Using host network
+    entrypoint: ''
+    command: sh -c 'cd /app/src/protocols/custom/utils && node runServer.js'
+
+  agent:
+    build: .
+    network_mode: host # Using host network
+    volumes:
+      - agentData:/data
+    environment:
+      CYBUS_MQTT_HOST: localhost # Asuming Cybus Connectware to be reachable on local system
+      CYBUS_AGENT_MODE: distributed
+      CYBUS_AGENT_NAME: CustomConnectorAgent
+      CYBUS_LOG_LEVEL: info
+
+volumes:
+  agentData:

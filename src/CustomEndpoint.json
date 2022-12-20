@@ -1,0 +1,24 @@
+{
+    "$id": "CustomEndpoint",
+    "definitions": {
+        "address": {
+            "type": "object",
+            "required": [
+                "address"
+            ],
+            "additionalParameters": false,
+            "properties": {
+                "address": {
+                    "$id": "/properties/address",
+                    "type": "string",
+                    "description": "The storage address",
+                    "minLength": 1,
+                    "examples": [
+                        "foo",
+                        "bar"
+                    ]
+                }
+            }
+        }
+    }
+}
