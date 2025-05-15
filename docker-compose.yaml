@@ -1,4 +1,3 @@
-version: "2.4"
 services:
 
   # Run the example server
@@ -18,6 +17,10 @@ services:
       CYBUS_AGENT_MODE: distributed
       CYBUS_AGENT_NAME: CustomConnectorAgent
       CYBUS_LOG_LEVEL: info
+      CYBUS_HOSTNAME_INGRESS: localhost
+      USE_MUTUAL_TLS: false
+      TRUST_ALL_CERTS: true
+      CYBUS_CONTROLPLANE_URI: "wss://localhost:4223"
 
 volumes:
   agentData:
