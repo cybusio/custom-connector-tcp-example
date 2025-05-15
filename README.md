@@ -1,6 +1,6 @@
 # Custom Connector Example
 
-This is a sample implementation of a Custom Connector for [Cybus Connectware](https://www.cybus.io/produkt/cybus-connectware/), embedded in a so called Cybus Connectware [Agent](https://docs.cybus.io/latest/user/agents.html). You can read more about Cybus Connectware Agents [here](https://docs.cybus.io/latest/user/agents.html).
+This is a sample implementation of a Custom Connector for [Cybus Connectware](https://www.cybus.io/produkt/cybus-connectware/), embedded in a so called Cybus Connectware [Agent](https://docs.cybus.io/latest/user/agents.html). You can read more about Cybus Connectware Agents [here](https://docs.cybus.io/documentation/agents).
 
 ## Content
 
@@ -8,15 +8,15 @@ This repository includes the following content:
 - Server implementation `src/utils/server.js`
 - Client implementation `src/*.js`
 - Playground environment `docker-compose.yaml`
-- Example [Service Commissioning File](https://docs.cybus.io/latest/user/services/structure/index.html) `examples/service.yaml`
+- Example [Service Commissioning File](https://docs.cybus.io/documentation/services/service-commissioning-files#structure-of-service-commissioning-files) `examples/service.yaml`
 
 ## How to build
 
-Since a Custom Connector is based on a pre build Docker Image, the Image Tag has to passed to the build command. For the time being the lates Tag was `1.1.1`.
-
+Since a Custom Connector is based on a pre-built Docker image, the image tag version has to be passed to the build command. 
+This tag version equals to the Connectware version this Custom Connector should be connected to, for instance:
 
 ```shell
-docker-compose build --build-arg BASEIMAGE_VERSION=1.1.1
+ docker compose build --build-arg BASEIMAGE_VERSION=1.1.1
 ```
 
 ## How to run
@@ -25,18 +25,18 @@ To start the Agent along with a sample server, adjust the playground environment
 
 
 ```shell
-docker-compose up
+ docker compose up
 ```
 
-Follow the usaual Agent Registration Process and install the attached Example [Service Commissioning File](https://docs.cybus.io/latest/user/services/structure/index.html) `examples/service.yaml`.
+Follow the usual Agent Registration Process and install the attached example [Service Commissioning File](https://docs.cybus.io/documentation/services/service-commissioning-files#structure-of-service-commissioning-files) `examples/service.yaml`.
 
-If everything went right, you should now be able to observe an emty string beeing published under `services/mycustomprotocolservice/mySubscribeEndpoint/foo`.
+If everything goes right, you should now be able to observe an empty string being published to the MQTT topic `services/mycustomprotocolservice/mySubscribeEndpoint/foo`.
 
-For writing opperation simply publish a string on `services/mycustomprotocolservice/myWriteEndpoint/foo/set`
+For a write operation, simply publish a string to the MQTT topic `services/mycustomprotocolservice/myWriteEndpoint/foo/set`
 
 ## Sample Protocol Specification
 
-There are two supported opperations `WRITE` and `read`. The argument separator is a simple colon `:`.
+There are two supported operations `WRITE` and `read`. The argument separator is a simple colon `:`.
 
 ### Write Operation
 Request:
