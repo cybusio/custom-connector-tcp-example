@@ -1,6 +1,14 @@
 # Custom Connector Example
 
-This is a sample implementation of a Custom Connector for [Cybus Connectware](https://www.cybus.io/produkt/cybus-connectware/), embedded in a so called Cybus Connectware [Agent](https://docs.cybus.io/latest/user/agents.html). You can read more about Cybus Connectware Agents [here](https://docs.cybus.io/documentation/agents).
+This is a sample implementation of a Custom Connector for [Cybus Connectware](https://www.cybus.io/produkt/cybus-connectware/), embedded in a so called Cybus Connectware Agent. You can read more about Cybus Connectware Agents [here](https://docs.cybus.io/documentation/agents).
+
+> [!IMPORTANT]
+> The given example code on the main branch is compatible with new Connectware releases.
+>
+> To construct custom connectors for Connectware 1.x.x please use the following:
+>
+> [![GitHub tag](https://img.shields.io/badge/tag-cw--1.10.2-blue.svg)](https://github.com/cybusio/custom-connector-tcp-example/releases/tag/cw-1.10.2)
+>
 
 ## Content
 
@@ -28,7 +36,7 @@ To start the Agent along with a sample server, adjust the playground environment
  docker compose up
 ```
 
-Follow the usual Agent Registration Process and install the attached example [Service Commissioning File](https://docs.cybus.io/documentation/services/service-commissioning-files#structure-of-service-commissioning-files) `examples/service.yaml`.
+Follow the usual [Agent Registration Process](https://docs.cybus.io/documentation/agents/registering-agents-in-connectware) and install the attached example [Service Commissioning File](https://docs.cybus.io/documentation/services/service-commissioning-files#structure-of-service-commissioning-files) `examples/service.yaml`.
 
 If everything goes right, you should now be able to observe an empty string being published to the MQTT topic `services/mycustomprotocolservice/mySubscribeEndpoint/foo`.
 
