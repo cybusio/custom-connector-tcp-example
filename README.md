@@ -38,9 +38,9 @@ To start the Agent along with a sample server, adjust the playground environment
 
 Follow the usual [Agent Registration Process](https://docs.cybus.io/documentation/agents/registering-agents-in-connectware) and install the attached example [Service Commissioning File](https://docs.cybus.io/documentation/services/service-commissioning-files#structure-of-service-commissioning-files) `examples/service.yaml`.
 
-If everything goes right, you should now be able to observe an empty string being published to the MQTT topic `services/mycustomprotocolservice/mySubscribeEndpoint/foo`.
+If everything goes right, you should now be able to observe an empty string being published to the MQTT topic `services/mycustomprotocolservice/mySubscribeEndpoint`.
 
-For a write operation, simply publish a string to the MQTT topic `services/mycustomprotocolservice/myWriteEndpoint/foo/set`
+For a write operation, simply publish a string to the MQTT topic `services/mycustomprotocolservice/myWriteEndpoint/set`
 
 ## Sample Protocol Specification
 
